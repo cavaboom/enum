@@ -20,6 +20,14 @@ public class Car extends transport<DriverB> implements Competing {
         return bodyType;
     }
 
+    public VehicleType getVehicleType() {
+        return vehicleType;
+    }
+
+    public void setVehicleType(VehicleType vehicleType) {
+        this.vehicleType = vehicleType;
+    }
+
     public void start() {
         System.out.println("Легковой автомобиль " + getBrand() + " " + getModel() + " начинает движение");
     }

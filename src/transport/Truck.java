@@ -14,6 +14,18 @@ public class Truck extends transport<DriverC> implements Competing {
         this.vehicleType = vehicleType;
     }
 
+    public LoadCapacity getLoadCapacity() {
+        return loadCapacity;
+    }
+
+    public VehicleType getVehicleType() {
+        return vehicleType;
+    }
+
+    public void setVehicleType(VehicleType vehicleType) {
+        this.vehicleType = vehicleType;
+    }
+
     public void start() {
         System.out.println("Грузовой автомобиль " + getBrand() + " " + getModel() + " начинает движение");
     }

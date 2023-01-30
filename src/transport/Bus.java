@@ -14,6 +14,18 @@ public class Bus extends transport<DriverD> implements Competing {
         this.vehicleType = vehicleType;
     }
 
+    public SeatsAmount getSeatsAmount() {
+        return seatsAmount;
+    }
+
+    public VehicleType getVehicleType() {
+        return vehicleType;
+    }
+
+    public void setVehicleType(VehicleType vehicleType) {
+        this.vehicleType = vehicleType;
+    }
+
     public void start() {
         System.out.println("Автобус " + getBrand() + " " + getModel() + " начинает движение");
     }
