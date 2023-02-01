@@ -4,6 +4,7 @@ import Drivers.DriverD;
 import Enums.SeatsAmount;
 import Enums.VehicleType;
 import Interfaces.Competing;
+import Exception.TransportTypeException;
 
 public class Bus extends transport<DriverD> implements Competing {
     private SeatsAmount seatsAmount;
@@ -34,6 +35,7 @@ public class Bus extends transport<DriverD> implements Competing {
         System.out.println("Автобус " + getBrand() + " " + getModel() + " заканчивает движение");
     }
 
+
     public void pitStop() {
         System.out.println("Пит-стоп для автобуса");
     }
@@ -53,4 +55,10 @@ public class Bus extends transport<DriverD> implements Competing {
             System.out.println("Тип транспортного средства " + vehicleType);
         }
     }
+
+    @Override
+    public void diagnose() throws TransportTypeException {
+        throw new TransportTypeException("Автобусы не проходят диагностику");
+    }
+
 }

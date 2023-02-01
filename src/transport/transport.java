@@ -1,7 +1,7 @@
 package transport;
 import Utilities.Utilities;
 import Drivers.Driver;
-
+import Exception.TransportTypeException;
 public abstract class transport <T extends Driver>{
     private String brand;
     private String model;
@@ -51,6 +51,8 @@ public abstract class transport <T extends Driver>{
     public void stop() {
         System.out.println("Закончить движение");
     }
+
+    public abstract void diagnose() throws TransportTypeException;
 
     @Override
     public String toString() {

@@ -4,10 +4,12 @@ import Drivers.DriverC;
 import Enums.LoadCapacity;
 import Enums.VehicleType;
 import Interfaces.Competing;
+import Exception.TransportTypeException;
 
 public class Truck extends transport<DriverC> implements Competing {
     private LoadCapacity loadCapacity;
     private VehicleType vehicleType;
+
     public Truck (String brand, String model, double engineVolume, DriverC driver, LoadCapacity loadCapacity, VehicleType vehicleType) {
         super(brand, model, engineVolume, driver);
         this.loadCapacity = loadCapacity;
@@ -34,6 +36,11 @@ public class Truck extends transport<DriverC> implements Competing {
         System.out.println("Грузовой автомобиль " + getBrand() + " " + getModel() + " заканчивает движение");
     }
 
+    @Override
+    public void diagnose() {
+        System.out.println("Провести диагностику грузовика");
+    }
+
     public void pitStop() {
         System.out.println("Пит-стоп для грузовика");
     }
@@ -53,4 +60,5 @@ public class Truck extends transport<DriverC> implements Competing {
             System.out.println("Тип транспортного средства " + vehicleType);
         }
     }
+
 }

@@ -2,13 +2,16 @@ import Enums.BodyType;
 import Enums.LoadCapacity;
 import Enums.SeatsAmount;
 import Enums.VehicleType;
+import com.sun.jdi.connect.Transport;
 import transport.Car;
 import transport.Bus;
 import transport.Truck;
 import Drivers.DriverB;
 import Drivers.DriverC;
 import Drivers.DriverD;
+import Exception.TransportTypeException;
 public class Main {
+
     public static void main(String[] args) {
         DriverB driverB = new DriverB("Иванов Сергей Сергеевич", true, 20, "B");
         DriverC driverC = new DriverC("Рогов Константин Алексеевич", true, 15, "C");
@@ -43,5 +46,14 @@ public class Main {
         truck1.bestLapTime();
         System.out.println();
         System.out.println(car3);
+        System.out.println();
+
+        car1.diagnose();
+        truck1.diagnose();
+        try {
+            bus1.diagnose();
+        } catch (TransportTypeException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
